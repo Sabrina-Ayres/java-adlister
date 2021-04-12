@@ -13,21 +13,6 @@
 <%@ page import="Users.Contact" %>
 
 
-<%
-
-    List<Users.Contact> contacts = Arrays.asList(
-            new Users.Contact(1, "Jane Smith", "jane@gmail.com", "123 Street", "222.222.2222", true),
-            new Users.Contact(2, "Joe Smith", "joe@gmail.com", "456 Lane", "333.333.3333", false),
-            new Users.Contact(3, "Jack Smith", "jack@gmail.com", "123 Lane", "444.444.4444", true),
-            new Users.Contact(4, "John Smith", "john@gmail.com", "456 Street", "555.555.5555", false),
-            new Users.Contact(5, "Jessica Smith", "jessica@gmail.com", "789 Avenue", "666.666.6666", true)
-    );
-
-    request.setAttribute("contacts", contacts);
-
-%>
-
-
 <html>
 <head>
     <title>Contacts</title>
@@ -48,7 +33,7 @@
 
 
     <c:forEach items="${contacts}" var="contact">
-        <c:if test="${contact.getIsActive() == true}">
+        <c:if test="${contact.IsActive}">
             <tr>
                 <td>${contact.id}</td>
                 <td>${contact.name}</td>
